@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining Money Bank - Start Earning Today</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1a365d);
+            color: white;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .logo i {
+            color: #2d9cdb;
+            font-size: 42px;
+        }
+
+        .logo h1 {
+            font-size: 42px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(30, 60, 110, 0.4);
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* Main Registration Button */
+        .main-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d9cdb, #1d8ac7);
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            padding: 22px 50px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(45, 156, 219, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .main-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(45, 156, 219, 0.6);
+            background: linear-gradient(135deg, #1d8ac7, #2d9cdb);
+        }
+
+        .main-btn i {
+            margin-right: 12px;
+        }
+
+        .btn-subtext {
+            font-size: 16px;
+            color: #94a3b8;
+            margin-top: 15px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: rgba(30, 60, 110, 0.6);
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid #2d9cdb;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(30, 60, 110, 0.8);
+        }
+
+        .feature-card i {
+            font-size: 48px;
+            color: #2d9cdb;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .feature-card p {
+            color: #cbd5e1;
+            font-size: 16px;
+        }
+
+        /* Notice Box */
+        .notice-box {
+            background: rgba(243, 156, 18, 0.15);
+            border: 1px solid #f39c12;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .notice-box h3 {
+            color: #f39c12;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .notice-box p {
+            color: #fef3c7;
+            font-size: 17px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            text-align: center;
+            padding: 30px;
+            background: rgba(30, 60, 110, 0.4);
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .contact-info h3 {
+            color: #2d9cdb;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .contact-item i {
+            color: #2d9cdb;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+        }
+
+        .copyright {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 32px;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .main-btn {
+                font-size: 20px;
+                padding: 18px 35px;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 28px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .main-btn {
+                font-size: 18px;
+                padding: 16px 30px;
+                display: block;
+                margin: 20px auto;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <h1>Mining Money Bank</h1>
+            </div>
+            <p class="tagline">Pakistan's Most Trusted Online Investment Platform | Daily Profits | Secure & Transparent</p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Start Earning <span style="color: #2d9cdb;">Daily Profits</span> Today</h2>
+            <p>Join thousands of satisfied investors who are growing their wealth with our secure and reliable platform. Get daily returns on your investment with complete transparency and professional management.</p>
+            
+            <!-- MAIN REGISTRATION BUTTON -->
+            <a href="https://moneybanksupport.github.io/Money-bank-pro/" class="main-btn" target="_blank">
+                <i class="fas fa-user-plus"></i> REGISTER NOW & START EARNING
+            </a>
+            
+            <p class="btn-subtext">Click the button above to register and access your personal dashboard</p>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Daily Profits</h3>
+                <p>Earn consistent daily returns on your investment. Watch your money grow every single day.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>100% Secure</h3>
+                <p>Your investment and personal data are protected with bank-level security measures.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>Flexible Terms</h3>
+                <p>Invest on your own terms with flexible investment periods and withdrawal options.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our customer support team is available round the clock to assist you with any queries.</p>
+            </div>
+        </section>
+
+        <!-- Notice Box -->
+        <div class="notice-box">
+            <h3><i class="fas fa-exclamation-triangle"></i> Important Notice</h3>
+            <p>Investment involves risks. Please read all terms and conditions carefully before investing. Only invest money you can afford to lose. Past performance is not indicative of future results.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Need Assistance?</h3>
+            <p>Our support team is here to help you with any questions or concerns.</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone: +1396754357</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Support Hours: 9 AM - 6 PM</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 25px; font-size: 16px;">
+                <strong>Deposit Accounts:</strong> JazzCash: updating| EasyPaisa: Updating Soon
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2023 Mining Money Bank. All rights reserved.</p>
+            <p class="copyright">This platform operates in accordance with all applicable laws and regulations.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for the main button
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainBtn = document.querySelector('.main-btn');
+            
+            // Add a pulsing animation effect
+            setInterval(() => {
+                mainBtn.style.boxShadow = '0 8px 20px rgba(45, 156, 219, 0.6)';
+                setTimeout(() => {
+                    mainBtn.style.boxShadow = '0 8px 20px rgba(45, 156, 219, 0.4)';
+                }, 800);
+            }, 2000);
+            
+            // Track button clicks
+            mainBtn.addEventListener('click', function() {
+                alert('You are being redirected to the registration page. Please complete the registration process there.');
+            });
+        });
+    </script>
+</body>
+</html>
