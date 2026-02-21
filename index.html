@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,6 +27,7 @@
             --gradient: linear-gradient(135deg, #00D4AA 0%, #00B894 100%);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             --shadow-hover: 0 15px 40px rgba(0, 212, 170, 0.2);
+            --mega-color: #D9272E;
         }
 
         * {
@@ -215,6 +216,37 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* ===== DOWNLOAD BUTTON ===== */
+        .btn-download {
+            background: var(--mega-color);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-download:hover {
+            background: #b81e24;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(217, 39, 46, 0.3);
+        }
+
+        .btn-download i {
+            font-size: 1.2rem;
+        }
+
+        .btn-download-large {
+            padding: 18px 40px;
+            font-size: 1.2rem;
+        }
+
         /* ===== HERO SECTION ===== */
         .hero {
             max-width: 1400px;
@@ -298,6 +330,93 @@
         .card-2 {
             bottom: 20px;
             left: -20px;
+        }
+
+        /* ===== DOWNLOAD SECTION ===== */
+        .download-section {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 30px;
+        }
+
+        .download-card {
+            background: linear-gradient(135deg, rgba(217, 39, 46, 0.1), rgba(0, 212, 170, 0.1));
+            border: 2px solid var(--mega-color);
+            border-radius: 60px;
+            padding: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(217, 39, 46, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .download-icon {
+            font-size: 5rem;
+            color: var(--mega-color);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-card h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-card p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light);
+        }
+
+        .info-item i {
+            color: var(--mega-color);
         }
 
         /* ===== FEATURES SECTION ===== */
@@ -750,8 +869,17 @@
             50% { transform: translateY(-20px); }
         }
 
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         .float {
             animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -773,6 +901,16 @@
 
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-info {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -800,6 +938,14 @@
             }
 
             .cta-card h2 {
+                font-size: 2rem;
+            }
+
+            .download-card {
+                padding: 40px 20px;
+            }
+
+            .download-card h2 {
                 font-size: 2rem;
             }
         }
@@ -830,6 +976,7 @@
                 <a href="#" class="nav-link">Home</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#pricing" class="nav-link">Plans</a>
+                <a href="#download" class="nav-link">Download App</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
@@ -869,9 +1016,14 @@
                 </div>
             </div>
 
-            <button class="btn-primary" onclick="showApp()" style="margin-top: 30px;">
-                <i class="fas fa-play"></i> Start Mining Now
-            </button>
+            <div style="display: flex; gap: 20px; margin-top: 30px;">
+                <button class="btn-primary" onclick="showApp()">
+                    <i class="fas fa-play"></i> Start Mining Now
+                </button>
+                <a href="#download" class="btn-download">
+                    <i class="fas fa-download"></i> Download App
+                </a>
+            </div>
         </div>
 
         <div class="hero-image">
@@ -889,6 +1041,65 @@
                     <h4>Daily Profit</h4>
                     <p>1.3% Returns</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section (MEGA.nz) -->
+    <section id="download" class="download-section">
+        <div class="download-card">
+            <div class="download-icon">
+                <i class="fab fa-mega"></i>
+            </div>
+            <h2>Download Our <span style="color: var(--mega-color);">Android App</span></h2>
+            <p>Get the Mining Money Bank app on your Android device and start mining anywhere, anytime!</p>
+            
+            <div class="download-buttons">
+                <a href="https://mega.nz/file/BKlC3Q7S#9GxXyiElvXKkYTeKfTwJ2hWyOXIio85T3gXFftEfH08" 
+                   class="btn-download btn-download-large pulse" 
+                   target="_blank"
+                   onclick="trackDownload()">
+                    <i class="fas fa-download"></i> Download Now (MEGA.nz)
+                </a>
+                <button class="btn-outline" onclick="showDownloadInstructions()">
+                    <i class="fas fa-info-circle"></i> How to Install?
+                </button>
+            </div>
+
+            <div class="download-info">
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Version 2.0.1</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Size: 25 MB</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Android 5.0+</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Secure & Safe</span>
+                </div>
+            </div>
+
+            <!-- Download Instructions (Hidden by default) -->
+            <div id="downloadInstructions" style="display: none; margin-top: 40px; padding: 30px; background: rgba(0,0,0,0.3); border-radius: 30px;">
+                <h3 style="margin-bottom: 20px;">📱 Installation Guide:</h3>
+                <ol style="text-align: left; color: var(--gray); line-height: 2;">
+                    <li>Click the <strong>Download Now</strong> button above</li>
+                    <li>Wait for MEGA.nz to load the file</li>
+                    <li>Click <strong>Download</strong> on MEGA website</li>
+                    <li>Open the downloaded APK file</li>
+                    <li>Allow <strong>Install from Unknown Sources</strong> if prompted</li>
+                    <li>Click <strong>Install</strong> and wait for completion</li>
+                    <li>Open the app and start mining!</li>
+                </ol>
+                <button class="btn-primary" onclick="hideInstructions()" style="margin-top: 20px;">
+                    <i class="fas fa-check"></i> Got it!
+                </button>
             </div>
         </div>
     </section>
@@ -1079,8 +1290,11 @@
                 <button class="btn-primary" onclick="showApp()">
                     <i class="fas fa-rocket"></i> Open Account
                 </button>
+                <a href="#download" class="btn-outline">
+                    <i class="fas fa-download"></i> Download App
+                </a>
                 <button class="btn-outline" onclick="window.open('https://wa.me/923250416566', '_blank')">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Support
+                    <i class="fab fa-whatsapp"></i> WhatsApp
                 </button>
             </div>
         </div>
@@ -1096,7 +1310,7 @@
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" onclick="window.open('https://wa.me/923250416566', '_blank')"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -1106,8 +1320,8 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#pricing">Plans</a></li>
+                    <li><a href="#download">Download App</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
 
@@ -1117,7 +1331,7 @@
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -1173,6 +1387,25 @@
                 const iframe = document.getElementById('appIframe');
                 iframe.contentWindow.postMessage({ action: 'showLogin' }, '*');
             }, 1000);
+        }
+
+        // Show Download Instructions
+        function showDownloadInstructions() {
+            const instructions = document.getElementById('downloadInstructions');
+            instructions.style.display = 'block';
+            instructions.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Hide Instructions
+        function hideInstructions() {
+            document.getElementById('downloadInstructions').style.display = 'none';
+        }
+
+        // Track Download (for analytics)
+        function trackDownload() {
+            console.log('App download started from MEGA.nz');
+            // You can add Google Analytics or other tracking here
+            alert('Download started! Check your downloads folder for the APK file.');
         }
 
         // Close modal when clicking outside
