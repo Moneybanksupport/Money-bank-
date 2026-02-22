@@ -24,7 +24,9 @@
             --warning: #FFA502;
             --info: #6C5CE7;
             --premium: #FFD700;
+            --regular: #00D4AA;
             --gradient: linear-gradient(135deg, #00D4AA 0%, #00B894 100%);
+            --premium-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             --shadow-hover: 0 15px 40px rgba(0, 212, 170, 0.2);
             --mega-color: #D9272E;
@@ -45,6 +47,252 @@
             overflow-x: hidden;
         }
 
+        /* ===== USER TYPE BADGES ===== */
+        .user-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .user-badge.regular {
+            background: rgba(0, 212, 170, 0.15);
+            color: var(--regular);
+            border: 1px solid var(--regular);
+        }
+
+        .user-badge.premium {
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--premium);
+            border: 1px solid var(--premium);
+        }
+
+        .user-badge i {
+            font-size: 0.7rem;
+        }
+
+        /* ===== COMPARISON TABLE ===== */
+        .comparison-section {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 30px;
+        }
+
+        .comparison-table {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 40px;
+            padding: 50px;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .comparison-table th.regular-header {
+            color: var(--regular);
+        }
+
+        .comparison-table th.premium-header {
+            color: var(--premium);
+        }
+
+        .comparison-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--card-border);
+            color: var(--gray);
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .comparison-table td i {
+            margin-right: 10px;
+        }
+
+        .comparison-table td .check {
+            color: var(--success);
+        }
+
+        .comparison-table td .premium-check {
+            color: var(--premium);
+        }
+
+        .comparison-table td .times {
+            color: var(--danger);
+        }
+
+        .comparison-table .regular-row td:nth-child(2) {
+            text-align: center;
+        }
+
+        .comparison-table .premium-row td:nth-child(3) {
+            text-align: center;
+        }
+
+        /* ===== USER TYPE CARDS ===== */
+        .user-type-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .type-card {
+            background: var(--card-bg);
+            border-radius: 30px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .type-card.regular {
+            border: 2px solid var(--regular);
+        }
+
+        .type-card.premium {
+            border: 2px solid var(--premium);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
+        }
+
+        .type-card .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .type-card.regular .badge {
+            background: var(--regular);
+            color: var(--secondary);
+        }
+
+        .type-card.premium .badge {
+            background: var(--premium);
+            color: var(--secondary);
+        }
+
+        .type-card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .type-card .deposit-range {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .type-card.regular .deposit-range {
+            color: var(--regular);
+        }
+
+        .type-card.premium .deposit-range {
+            color: var(--premium);
+        }
+
+        .type-card .feature-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .type-card .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            color: var(--light);
+        }
+
+        .type-card.regular .feature-list li i {
+            color: var(--regular);
+        }
+
+        .type-card.premium .feature-list li i {
+            color: var(--premium);
+        }
+
+        .type-card .profit-rate {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .type-card.regular .profit-rate {
+            color: var(--regular);
+        }
+
+        .type-card.premium .profit-rate {
+            color: var(--premium);
+        }
+
+        /* ===== FLOATING USER BADGE ===== */
+        .floating-user-badge {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 60px;
+            padding: 12px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: var(--shadow);
+            z-index: 99;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .floating-user-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .floating-user-badge i {
+            font-size: 1.2rem;
+        }
+
+        .floating-user-badge.regular {
+            border-left: 4px solid var(--regular);
+        }
+
+        .floating-user-badge.premium {
+            border-left: 4px solid var(--premium);
+        }
+
+        .floating-user-badge .badge-text {
+            font-weight: 600;
+        }
+
+        .floating-user-badge.regular .badge-text {
+            color: var(--regular);
+        }
+
+        .floating-user-badge.premium .badge-text {
+            color: var(--premium);
+        }
+
+        /* Rest of your existing CSS remains exactly the same */
         /* ===== BACKGROUND EFFECTS ===== */
         .bg-effect {
             position: fixed;
@@ -492,6 +740,158 @@
             line-height: 1.6;
         }
 
+        /* ===== USER TYPE SHOWCASE ===== */
+        .user-showcase {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 30px;
+        }
+
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .showcase-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .showcase-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .showcase-card {
+            background: var(--card-bg);
+            border-radius: 40px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .showcase-card.regular {
+            border: 2px solid var(--regular);
+        }
+
+        .showcase-card.premium {
+            border: 2px solid var(--premium);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .showcase-tag {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .showcase-card.regular .showcase-tag {
+            background: var(--regular);
+            color: var(--secondary);
+        }
+
+        .showcase-card.premium .showcase-tag {
+            background: var(--premium);
+            color: var(--secondary);
+        }
+
+        .showcase-icon {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .showcase-card.regular .showcase-icon {
+            color: var(--regular);
+        }
+
+        .showcase-card.premium .showcase-icon {
+            color: var(--premium);
+        }
+
+        .showcase-card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .showcase-range {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .showcase-card.regular .showcase-range {
+            color: var(--regular);
+        }
+
+        .showcase-card.premium .showcase-range {
+            color: var(--premium);
+        }
+
+        .showcase-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .showcase-features li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            color: var(--light);
+            font-size: 1.1rem;
+        }
+
+        .showcase-card.regular .showcase-features li i {
+            color: var(--regular);
+        }
+
+        .showcase-card.premium .showcase-features li i {
+            color: var(--premium);
+        }
+
+        .showcase-profit {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .showcase-profit .label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .showcase-profit .rate {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .showcase-card.regular .showcase-profit .rate {
+            color: var(--regular);
+        }
+
+        .showcase-card.premium .showcase-profit .rate {
+            color: var(--premium);
+        }
+
+        /* Rest of your CSS remains exactly the same */
         /* ===== PRICING SECTION ===== */
         .pricing {
             max-width: 1400px;
@@ -895,7 +1295,8 @@
 
             .features-grid,
             .pricing-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .showcase-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -921,7 +1322,8 @@
 
             .features-grid,
             .pricing-grid,
-            .testimonials-grid {
+            .testimonials-grid,
+            .showcase-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -975,6 +1377,7 @@
             <nav class="nav-menu">
                 <a href="#" class="nav-link">Home</a>
                 <a href="#features" class="nav-link">Features</a>
+                <a href="#usertypes" class="nav-link">User Types</a>
                 <a href="#pricing" class="nav-link">Plans</a>
                 <a href="#download" class="nav-link">Download App</a>
                 <a href="#testimonials" class="nav-link">Testimonials</a>
@@ -1004,11 +1407,11 @@
             <div class="hero-stats">
                 <div class="stat-item">
                     <h3>1.3%</h3>
-                    <p>Daily Profit</p>
+                    <p>Premium Profit</p>
                 </div>
                 <div class="stat-item">
-                    <h3>50K+</h3>
-                    <p>Happy Investors</p>
+                    <h3>0.5%</h3>
+                    <p>Regular Profit</p>
                 </div>
                 <div class="stat-item">
                     <h3>24/7</h3>
@@ -1029,18 +1432,116 @@
         <div class="hero-image">
             <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mining">
             <div class="floating-card card-1 float">
-                <i class="fas fa-chart-line"></i>
+                <i class="fas fa-crown" style="color: var(--premium);"></i>
                 <div>
-                    <h4>PKR 50,000+</h4>
-                    <p>Premium Users</p>
+                    <h4>Premium Users</h4>
+                    <p>1.3% Daily Profit</p>
                 </div>
             </div>
             <div class="floating-card card-2 float" style="animation-delay: 2s;">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-user" style="color: var(--regular);"></i>
                 <div>
-                    <h4>Daily Profit</h4>
-                    <p>1.3% Returns</p>
+                    <h4>Regular Users</h4>
+                    <p>0.5% Daily Profit</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Types Showcase Section - NEW -->
+    <section id="usertypes" class="user-showcase">
+        <div class="showcase-header">
+            <h2>Choose Your <span style="color: var(--primary);">User Type</span></h2>
+            <p>Select the plan that best fits your investment goals</p>
+        </div>
+
+        <div class="showcase-grid">
+            <!-- Regular User Card -->
+            <div class="showcase-card regular">
+                <div class="showcase-tag">STARTING PLAN</div>
+                <div class="showcase-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>Regular User</h3>
+                <div class="showcase-range">PKR 5,000 - 49,999</div>
+                
+                <ul class="showcase-features">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Minimum Deposit: PKR 5,000</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-percent"></i>
+                        <span>Daily Profit: 0.5%</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Withdrawal: Monthly (1st of month)</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-lock"></i>
+                        <span>Withdraw Only from Profits</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-ban"></i>
+                        <span>Deposit Amount Locked</span>
+                    </li>
+                </ul>
+
+                <div class="showcase-profit">
+                    <div class="label">Daily Profit Rate</div>
+                    <div class="rate">0.5%</div>
+                </div>
+
+                <button class="btn-primary" onclick="showApp()" style="width: 100%; margin-top: 30px;">
+                    <i class="fas fa-rocket"></i> Start as Regular
+                </button>
+            </div>
+
+            <!-- Premium User Card -->
+            <div class="showcase-card premium">
+                <div class="showcase-tag">MOST POPULAR</div>
+                <div class="showcase-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Premium User</h3>
+                <div class="showcase-range">PKR 50,000 & Above</div>
+                
+                <ul class="showcase-features">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Minimum Deposit: PKR 50,000</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-percent"></i>
+                        <span>Daily Profit: 1.3%</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Withdrawal: DAILY</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-lock"></i>
+                        <span>Withdraw Only from Profits</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-ban"></i>
+                        <span>Deposit Amount Locked</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-headset"></i>
+                        <span>Premium Support</span>
+                    </li>
+                </ul>
+
+                <div class="showcase-profit">
+                    <div class="label">Daily Profit Rate</div>
+                    <div class="rate">1.3%</div>
+                </div>
+
+                <button class="btn-primary" onclick="showApp()" style="width: 100%; margin-top: 30px; background: var(--premium); color: var(--secondary);">
+                    <i class="fas fa-crown"></i> Go Premium
+                </button>
             </div>
         </div>
     </section>
@@ -1125,15 +1626,15 @@
                     <i class="fas fa-chart-pie"></i>
                 </div>
                 <h3>Daily Profits</h3>
-                <p>Earn 1.3% daily profit on your total deposited amount</p>
+                <p>Earn 0.5% (Regular) or 1.3% (Premium) daily profit on your deposits</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-clock"></i>
                 </div>
-                <h3>24/7 Withdrawals</h3>
-                <p>Premium users can withdraw daily, regular users on 1st of each month</p>
+                <h3>Flexible Withdrawals</h3>
+                <p>Premium users: Daily withdrawal | Regular users: Monthly (1st of month)</p>
             </div>
 
             <div class="feature-card">
@@ -1157,7 +1658,7 @@
                     <i class="fas fa-gem"></i>
                 </div>
                 <h3>Premium Benefits</h3>
-                <p>Deposit PKR 50,000+ and unlock daily withdrawal feature</p>
+                <p>Deposit PKR 50,000+ to get 1.3% daily profit + daily withdrawals</p>
             </div>
         </div>
     </section>
@@ -1178,7 +1679,7 @@
                 </div>
                 <ul class="pricing-features">
                     <li><i class="fas fa-check"></i> Minimum Deposit: PKR 5,000</li>
-                    <li><i class="fas fa-check"></i> Daily Profit: 1.3%</li>
+                    <li><i class="fas fa-check"></i> Daily Profit: 0.5%</li>
                     <li><i class="fas fa-check"></i> Withdrawal: Monthly (1st of month)</li>
                     <li><i class="fas fa-check"></i> Profit Withdrawal Only</li>
                     <li><i class="fas fa-check"></i> Deposit Locked (No withdrawal)</li>
@@ -1227,10 +1728,10 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"I started with PKR 50,000 and now I'm getting daily profits. Best investment platform in Pakistan!"</p>
+                <p class="testimonial-text">"I started with PKR 50,000 and now I'm getting 1.3% daily profits. Best investment platform in Pakistan!"</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-crown" style="color: var(--premium);"></i>
                     </div>
                     <div class="author-info">
                         <h4>Ahmed Khan</h4>
@@ -1247,7 +1748,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"The monthly withdrawal on 1st works perfectly. I've already doubled my investment in profits!"</p>
+                <p class="testimonial-text">"The monthly withdrawal on 1st works perfectly with 0.5% daily profit. I've already doubled my investment!"</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">
                         <i class="fas fa-user"></i>
@@ -1267,10 +1768,10 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"Excellent customer support on WhatsApp. They helped me with my first deposit immediately!"</p>
+                <p class="testimonial-text">"Upgraded to Premium and now getting 1.3% daily profit with daily withdrawals. Excellent platform!"</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-crown" style="color: var(--premium);"></i>
                     </div>
                     <div class="author-info">
                         <h4>Bilal Ahmed</h4>
@@ -1278,6 +1779,63 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table - NEW -->
+    <section class="comparison-section">
+        <div class="section-header">
+            <h2>Regular vs <span style="color: var(--premium);">Premium</span></h2>
+            <p>Compare features and choose what's best for you</p>
+        </div>
+
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="regular-header">Regular User</th>
+                        <th class="premium-header">Premium User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Minimum Deposit</td>
+                        <td><i class="fas fa-check check"></i> PKR 5,000</td>
+                        <td><i class="fas fa-check premium-check"></i> PKR 50,000</td>
+                    </tr>
+                    <tr>
+                        <td>Daily Profit Rate</td>
+                        <td><i class="fas fa-percent check"></i> 0.5%</td>
+                        <td><i class="fas fa-percent premium-check"></i> 1.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Withdrawal Frequency</td>
+                        <td><i class="fas fa-calendar-alt check"></i> Monthly (1st)</td>
+                        <td><i class="fas fa-calendar-check premium-check"></i> DAILY</td>
+                    </tr>
+                    <tr>
+                        <td>Withdrawal Source</td>
+                        <td><i class="fas fa-chart-line check"></i> Only Profits</td>
+                        <td><i class="fas fa-chart-line premium-check"></i> Only Profits</td>
+                    </tr>
+                    <tr>
+                        <td>Deposit Lock</td>
+                        <td><i class="fas fa-lock check"></i> Locked</td>
+                        <td><i class="fas fa-lock premium-check"></i> Locked</td>
+                    </tr>
+                    <tr>
+                        <td>Premium Support</td>
+                        <td><i class="fas fa-times times"></i> No</td>
+                        <td><i class="fas fa-check premium-check"></i> Yes</td>
+                    </tr>
+                    <tr>
+                        <td>24/7 WhatsApp Support</td>
+                        <td><i class="fas fa-check check"></i> Yes</td>
+                        <td><i class="fas fa-check premium-check"></i> Yes</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -1319,9 +1877,9 @@
                 <ul class="footer-links">
                     <li><a href="#">Home</a></li>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#usertypes">User Types</a></li>
                     <li><a href="#pricing">Plans</a></li>
                     <li><a href="#download">Download App</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
                 </ul>
             </div>
 
@@ -1350,6 +1908,13 @@
             <p>© 2024 Mining Money Bank. All rights reserved. | Developed by <a href="https://moneybanksupport.github.io/Money-bank-pro/">Mining Money Bank Team</a></p>
         </div>
     </footer>
+
+    <!-- Floating User Type Badge -->
+    <div class="floating-user-badge regular" onclick="document.getElementById('usertypes').scrollIntoView({behavior: 'smooth'})">
+        <i class="fas fa-user"></i>
+        <span class="badge-text">Regular: 0.5% Daily</span>
+        <i class="fas fa-arrow-right"></i>
+    </div>
 
     <!-- App Modal -->
     <div class="app-modal" id="appModal">
@@ -1438,6 +2003,18 @@
             } else {
                 header.style.background = 'rgba(10, 10, 10, 0.95)';
             }
+
+            // Change floating badge based on scroll position
+            const floatingBadge = document.querySelector('.floating-user-badge');
+            if (window.scrollY > 500) {
+                floatingBadge.classList.add('premium');
+                floatingBadge.classList.remove('regular');
+                floatingBadge.innerHTML = '<i class="fas fa-crown"></i><span class="badge-text">Premium: 1.3% Daily</span><i class="fas fa-arrow-right"></i>';
+            } else {
+                floatingBadge.classList.add('regular');
+                floatingBadge.classList.remove('premium');
+                floatingBadge.innerHTML = '<i class="fas fa-user"></i><span class="badge-text">Regular: 0.5% Daily</span><i class="fas fa-arrow-right"></i>';
+            }
         });
 
         // Counter animation for stats
@@ -1464,7 +2041,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.feature-card, .pricing-card, .testimonial-card').forEach(el => {
+        document.querySelectorAll('.feature-card, .pricing-card, .testimonial-card, .showcase-card').forEach(el => {
             el.style.opacity = 0;
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease';
@@ -1478,7 +2055,7 @@
                 const statElements = document.querySelectorAll('.stat-item h3');
                 if (statElements.length >= 3) {
                     animateValue(statElements[0], 0, 1.3, 2000);
-                    animateValue(statElements[1], 0, 50, 2000);
+                    animateValue(statElements[1], 0, 0.5, 2000);
                     animateValue(statElements[2], 0, 24, 2000);
                 }
             }, 500);
